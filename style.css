@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 62.5%;
+}
+
+:root {
+    --font-color: #FFFFFF;
+    --header-c: #FF6B1A;
+    --menu: #1A1A1A;
+    --section-bg: #2A2A2A;
+    --font-p-color: #666666;
+}
+
+.wrapper,
+.container,
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    align-items: center;
+    min-width: 373px;
+    height: auto;
+}
+
+.animation div:hover {
+    transform: scale(1.1);
+}
+
+header {
+    position: relative;
+    background: var(--header-c);
+    width: 100%;
+    min-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .img {
+        display: block;
+        position: absolute;
+
+        & img {
+            min-width: 24px;
+            min-height: 20px;
+        }
+    }
+
+    & p {
+        font-size: 1.4rem;
+    }
+
+    & h2 {
+        font-size: 2.4rem;
+        margin-left: 31px;
+    }
+
+    & .title {
+        color: var(--font-color);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.wrapper {
+    min-height: 71px;
+    background: var(--menu);
+
+    & .menu {
+        display: none;
+
+        & a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 103px;
+            height: 37px;
+            color: var(--font-color);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.1s ease;
+        }
+
+    }
+
+    & .container {
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+
+        & #menu-toggle {
+            display: none;
+        }
+
+        & .burger {
+            display: flex;
+            align-items: center;
+            margin-left: 13px;
+            min-width: 103px;
+            min-height: 37px;
+            border-radius: 8px;
+            background: var(--header-c);
+            border: none;
+            font-size: 19px;
+            color: var(--font-color);
+
+            & #menu {
+                display: flex;
+                margin: 0 5px 0 10px;
+                min-width: 19px;
+                min-height: 20px;
+                justify-content: space-around;
+                flex-direction: column;
+
+                & span {
+                    height: 2px;
+                    background-color: var(--font-color);
+                }
+            }
+        }
+    }
+}
+
+.menu a:hover {
+    background: var(--header-c);
+}
+
+#menu-toggle:checked~.menu {
+    display: flex;
+    border-radius: 0 0 8px 8px;
+    padding-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    font-size: 16px;
+    background: var(--menu);
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+}
+
+main {
+    & section {
+        align-items: center;
+        min-height: 377px;
+        background: var(--section-bg);
+
+        & .narutlogo {
+            min-width: 151px;
+            min-height: 126px;
+            opacity: 0.2;
+            background: url('img/naruto.svg') center center /cover no-repeat;
+        }
+
+        & .container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            position: absolute;
+            min-width: 326px;
+            color: var(--font-color);
+
+            & p {
+                font-size: 1.6rem;
+                line-height: 20px;
+            }
+
+            & h2 {
+                font-size: 2.4rem;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+
+    & .container {
+        flex-direction: column;
+        margin-top: 39px;
+
+        & div {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            border-top: 4px solid var(--header-c);
+            position: relative;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            min-width: 324px;
+            min-height: 200px;
+            box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.205);
+            padding-left: 29px;
+            transition: all 0.4s ease;
+
+            & .img {
+                display: block;
+                position: absolute;
+            }
+
+            & img {
+                width: 24px;
+                height: 24px;
+            }
+
+            & span {
+                width: 274px;
+            }
+
+            & p {
+                font-size: 1.4rem;
+                color: var(--font-p-color);
+
+            }
+
+            & h2 {
+                margin-left: 31px;
+                margin-bottom: 10px;
+                font-size: 2.4rem;
+            }
+        }
+
+
+    }
+}
+
+
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    background: var(--menu);
+    margin-top: 130px;
+    color: var(--font-color);
+    font-size: 1.3rem;
+}
+
+@media (min-width: 1024px) {
+    header {
+        min-height: 200px;
+
+        & .img {
+            min-width: 57px;
+            min-height: 48px;
+
+            & img {
+                margin-left: -74px;
+                min-width: 57px;
+                min-height: 48px;
+            }
+        }
+    }
+
+    .wrapper .menu {
+        display: flex;
+        gap: 10px;
+
+        & a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 103px;
+            height: 37px;
+            text-decoration: none;
+            font-size: 1.7rem;
+            border-radius: 8px;
+            transition: all 0.1s ease;
+        }
+    }
+    .menu a:hover {
+         background: var(--header-c);
+    }
+
+    header h2 {
+        font-size: 3.6rem;
+        margin-left: 0;
+    }
+
+    header p {
+        font-size: 1.7rem;
+    }
+
+
+    .wrapper {
+        min-height: 60px;
+    }
+
+    .wrapper .container .burger {
+        display: none;
+    }
+
+    main {
+        & section {
+            min-height: 530px;
+
+            & .narutlogo {
+                min-width: 302px;
+                min-height: 253px;
+                background: url('img/nnoo.svg') center center /cover no-repeat;
+            }
+
+            & .container {
+                & h2 {
+                    font-size: 3.7rem;
+                }
+
+                & p {
+                    font-size: 1.8rem;
+                    margin-top: 9px;
+                }
+            }
+        }
+
+        & .content {
+            display: grid;
+
+            & .container {
+                display: grid;
+                grid-template-columns: repeat(3, 324px);
+                column-gap: 30px;
+                row-gap: 30px;
+
+                & div {
+                    min-width: 324px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+}
